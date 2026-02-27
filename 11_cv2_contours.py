@@ -11,10 +11,12 @@ countours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_
 
 for ctr in countours:
     if cv2.contourArea(ctr) > 200: # to remove noises
+        # drawing the countours for the detected objects
         # cv2.drawContours(img, ctr, -1, (0, 255, 0), 4)
         
+        # object detector
         x1, y1, w, h = cv2.boundingRect(ctr)
-        cv2.rectangle(img, (x1, y1), (x1+w, y1+h), (0, 255, 0), 3)
+        cv2.rectangle(img, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 3)
 
 
 
